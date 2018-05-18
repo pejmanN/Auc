@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1C8B45B-0928-4A3C-B1EC-2E4970D6A369}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AuctionManagement.Config</RootNamespace>
+    <AssemblyName>AuctionManagement.Config</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuctionManagement.Application\AuctionManagement.Application.csproj">
+      <Project>{2ac30e7e-4522-44e3-b6ca-89fce1daede4}</Project>
+      <Name>AuctionManagement.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Domain.Contracts\AuctionManagement.Domain.Contracts.csproj">
+      <Project>{15f1ebe7-3661-488e-8b5c-adfda2056496}</Project>
+      <Name>AuctionManagement.Domain.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Domain\AuctionManagement.Domain.csproj">
+      <Project>{35faef65-dfad-43fd-a7a5-001519b7944b}</Project>
+      <Name>AuctionManagement.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Infrastructure.ACL.Party\AuctionManagement.Infrastructure.ACL.Party.csproj">
+      <Project>{198e8009-ab87-43ec-8022-17b242594aa1}</Project>
+      <Name>AuctionManagement.Infrastructure.ACL.Party</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Interface.Facade.Contracts\AuctionManagement.Interface.Facade.Contracts.csproj">
+      <Project>{a1b49327-2596-49e3-a13b-59ac3018e09a}</Project>
+      <Name>AuctionManagement.Interface.Facade.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Interface.Facade.Query\AuctionManagement.Interface.Facade.Query.csproj">
+      <Project>{6aaa6156-1db3-4a65-8ed9-f2c45c070aca}</Project>
+      <Name>AuctionManagement.Interface.Facade.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Interface.Facade\AuctionManagement.Interface.Facade.csproj">
+      <Project>{a179dfea-3ac1-4667-ae8b-9a5dd113317e}</Project>
+      <Name>AuctionManagement.Interface.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Interface.RestApi\AuctionManagement.Interface.RestApi.csproj">
+      <Project>{a9158837-adb1-44b6-9020-c5fbc2d8b806}</Project>
+      <Name>AuctionManagement.Interface.RestApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.Persistence.NH\AuctionManagement.Persistence.NH.csproj">
+      <Project>{000aa972-72d0-4bf3-bafe-95a2a0f295b8}</Project>
+      <Name>AuctionManagement.Persistence.NH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AuctionManagement.QueryModel\AuctionManagement.QueryModel.csproj">
+      <Project>{12ae0f10-7083-4cfe-af95-0389edfbd708}</Project>
+      <Name>AuctionManagement.QueryModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Application\Framework.Application.csproj">
+      <Project>{95C5E6E5-A40F-4DCC-B6B8-1FA1CD0417F9}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj">
+      <Project>{94845118-391d-4fc5-8248-c27afbb77d72}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.NH\Framework.NH.csproj">
+      <Project>{365070f4-53fa-4773-b43d-585c4095893d}</Project>
+      <Name>Framework.NH</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
